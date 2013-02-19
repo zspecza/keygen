@@ -1,0 +1,30 @@
+{
+  "name": "KeyGen",
+  "version": "0.0.1",
+  "description": "A utility for generating complex random key strings and simulating them too.",
+  "main": "none",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "clear && mocha --compilers coffee:coffee-script --reporter spec --colors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "Declan de Wet",
+  "license": "none",
+  "dependencies": {
+    "chai": "~1.5.0",
+    "flour": "~0.4.9",
+    "coffee-script": "~1.4.0",
+    "uglify-js": "~2.2.5",
+    "mocha": "~1.8.1",
+    "jshint": "~0.9.1",
+    "coffeelint": "~0.5.4"
+  }
+}
