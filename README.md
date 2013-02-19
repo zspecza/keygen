@@ -94,4 +94,4 @@ $ cake build
 
 # Contributors
 
-@declandewet
+[@declandewet](https://github.com/declandewet)
