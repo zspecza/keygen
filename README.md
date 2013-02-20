@@ -24,12 +24,15 @@ It's as simple as that!
 var options = {
 	type: 'alphabetic',
 	sequences: 8,
-	lettercase: 'lower'
+	lettercase: 'lower',
+  sequencelength: 10
 }
 
 var key = new KeyGen(options);
 key.generate();
 ```
+
+Providing all options is *optional* - If you don't need to change a certain property from the default, your custom options will be merged with the defaults.
 
 #### But I don't want my key's sequences to be exactly the same!
 
@@ -59,7 +62,7 @@ key.generate();
 
 * `complex`: true, false
 * `sequences`: the number of sequences you want OR an object containing sequences with different properties
-  * Assuming `complex` is true, a sequence object's properties differ slightly in that there is now a `sequencelength` parameter that accepts a number representing the length of the sequence.
+* `sequencelength`: An integer representing the length of each sequence
 * `type`: 'numeric', 'alphabetic', 'alphanumeric'
 * `lettercase`: 'lower', 'upper', 'mixed'
 
