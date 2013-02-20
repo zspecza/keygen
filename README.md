@@ -22,9 +22,9 @@ It's as simple as that!
 
 ```js
 var options = {
-	type: 'alphabetic',
-	sequences: 8,
-	lettercase: 'lower',
+  type: 'alphabetic',
+  sequences: 8,
+  lettercase: 'lower',
   sequencelength: 10
 }
 
@@ -40,8 +40,8 @@ Fair enough, I've included a `complex` property just for this! However, you'll n
 
 ```js
 var options = {
-	complex: true,
-	sequences: {
+  complex: true,
+  sequences: {
     sequence1: {
       type: 'alphabetic',
       sequencelength: 3,
