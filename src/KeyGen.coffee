@@ -98,49 +98,20 @@ class KeyGen
                                            # but it's important,
     isCapital = Math.round Math.random()   # otherwise all letters will be
                                            # uppercase!
-
     switch sequence.type
-
-      when 'alphabetic'
-
-        switch sequence.lettercase
-
-          when 'lower'
-            randomletter
-
-          when 'mixed'
-
-            if isCapital is 1
-              randomletter.toUpperCase()
-            else if isCapital is 0
-              randomletter
-
-          when 'upper'
-            randomletter.toUpperCase()
-
-      when 'alphanumeric'
-
-        if isLetter is 1
-
-          switch sequence.lettercase
-
-            when 'lower'
-              randomletter
-
-            when 'mixed'
-
-              if isCapital is 1
-                randomletter.toUpperCase()
-              else if isCapital is 0
-                randomletter
-
-            when 'upper'
-              randomletter.toUpperCase()
-        else
-          randomnumber.toString()
-
-      when 'numeric'
-        randomnumber.toString()
+      when 'alphabetic' then switch sequence.lettercase
+        when 'lower' then randomletter
+        when 'mixed' then switch isCapital
+          when 1 then randomletter.toUpperCase() else randomletter
+        when 'upper' then randomletter.toUpperCase()
+      when 'alphanumeric' then switch isLetter
+        when 1 then switch sequence.lettercase
+          when 'lower' then randomletter
+          when 'mixed' then switch isCapital
+            when 1 then randomletter.toUpperCase() else randomletter
+          when 'upper' then randomletter.toUpperCase()
+        else randomnumber.toString()
+      when 'numeric' then randomnumber.toString()
 
   # This method will call generateCharacter() for each iteration in the
   # length of the sequence, as supplied by the option/default settings.
