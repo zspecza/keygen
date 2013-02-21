@@ -28,12 +28,12 @@ mergeObjects = ->
     i = 2
 
   # handle case when target is a string or something (possibly in deep copy)
-  if typeof target isnt 'object' and not isFunction(target)
+  unless typeof target is 'object' and not isFunction(target)
     target = {}
 
   # extend itself if only one argument is passed
   if length is i
-    target = this
+    target = @
     --i
 
   while i < length
@@ -46,15 +46,14 @@ mergeObjects = ->
           src = target[name]
           copy = options[name]
           # prevent never-ending loop
-          if target is copy
-            continue
+          if target is copy then continue
           # recurse if we're merging object values
           if deep and copy and typeof copy is 'object' and not copy.nodeType
             target[name] = mergeObjects deep,
             # never move original objects - clone them instead
             src or (if copy.length? then [] else {}),
             copy
-          else if copy isnt undefined # Don't bring in undefined values
+          else unless copy is undefined # Don't bring in undefined values
             target[name] = copy
     i++
 
@@ -81,7 +80,7 @@ class KeyGen
       sequences: 5
       sequencelength: 7
       lettercase: 'mixed'
-    @settings = mergeObjects(true, defaults, options)
+    @settings = mergeObjects true, defaults, options
 
   # Generates a single random character. Depending on the KeyGen settings, this
   # method can generate anything numeric, alphabetic, alphanumeric, uppercase,
