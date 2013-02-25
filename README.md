@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/declandewet/keygen.png?branch=master)](https://travis-ci.org/declandewet/keygen)
+
 # Description
 
 A rather handy customizable random key sequence generator. It supports complex keys and can even simulate a key to the best of it's ability!
