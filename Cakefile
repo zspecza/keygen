@@ -18,7 +18,7 @@ task 'build', 'builds the js', ->
   invoke 'build:coffee'
   invoke 'build:bundle'
 
-task 'are:you:a:lie?', 'tells the truth', ->
+task 'are:you:a:lie?', 'Tells the truth', ->
   console.log 'I am not a lie, Sincerely, Cake.'
 
 task 'test', 'runs the tests', ->
