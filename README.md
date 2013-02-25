@@ -26,7 +26,7 @@ var options = {
   sequences: 8,
   lettercase: 'lower',
   sequencelength: 10
-}
+};
 
 var key = new KeyGen(options);
 key.generate();
@@ -52,7 +52,7 @@ var options = {
       sequencelength: 5
     }
   }
-}
+};
 
 var key = new KeyGen(options);
 key.generate();
